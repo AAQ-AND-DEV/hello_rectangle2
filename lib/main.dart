@@ -46,34 +46,46 @@ class HelloRectangle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Center(
-
-      child:Stack(
+    return Column(
         children: <Widget>[
+          Stack(
+          children: <Widget>[
+            Center(
+              child: Container(
+              padding: textPaddingConst,
+              color: Colors.green[300],
+              height: 400.0,
+              width: 300.0,
+             child: Align(
+              alignment: Alignment.topCenter,
+              child: Text(
+              'Hello!',
+                 style: TextStyle(fontSize: 40.0),
+        )),),),
+              container,
 
-          Center(
+    ]),
+          Row(
+            //buttons from Flutter RaisedButton class docs
+            children:<Widget>[
+    RaisedButton(
+    onPressed: null,
+    child:  Text('disabled Button',
+    style: TextStyle(fontSize: 20)),
+    ),
+    SizedBox(height: 30),
+    RaisedButton(
+    onPressed: (){},
+    child: Text('Enabled Button',
+    style: TextStyle(fontSize: 20),
+    ),),
 
-            child: Container(
-                padding: textPaddingConst,
-                color: Colors.green[300],
-                height: 400.0,
-                width: 300.0,
 
 
-                  child: Align(
-                    alignment: Alignment.topCenter,
-                      child: Text(
-                    'Hello!',
+    ], ), ]
 
-                    style: TextStyle(fontSize: 40.0),
 
-                  )),
-                ),
-          ),
-          container,
 
-        ],
-      )
       );
   }
 }
